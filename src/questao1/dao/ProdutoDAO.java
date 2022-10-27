@@ -8,4 +8,8 @@ public interface ProdutoDAO {
     void adicionarProdutos(Produto produto);
 
     void excluindoProduto();
+
+    Boolean buscarProduto(int id);
+
+    void atualizandoProduto();
 }
