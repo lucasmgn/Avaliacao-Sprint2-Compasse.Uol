@@ -1,4 +1,4 @@
-package questao1.dao;
+package questao1.dao.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

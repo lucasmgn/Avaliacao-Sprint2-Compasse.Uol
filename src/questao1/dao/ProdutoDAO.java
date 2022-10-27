@@ -1,4 +1,4 @@
-package questao1.dao.jdbc;
+package questao1.dao;
 
 import questao1.model.Produto;
 
