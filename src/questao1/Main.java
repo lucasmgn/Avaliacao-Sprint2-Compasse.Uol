@@ -1,6 +1,6 @@
 package questao1;
 
-import questao1.dao.jdbcProdutoDAO;
+import questao1.dao.jdbc.jdbcProdutoDAO;
 import questao1.model.Produto;
 
 import java.math.BigDecimal;
@@ -8,8 +8,31 @@ import java.util.Scanner;
 
 public class Main {
 
+/*
+    1 - Crie uma entidade produto, com os seguintes atributos:
+            • id
+            • nome
+            • descrição
+            • quantidade
+            • preço
+
+    Sua aplicação deve oferecer no método main 3 opções no console usando a classe
+    Scanner:
+
+    A primeira opção deve cadastrar produtos e ao selecionar ela deve cadastrar
+    automaticamente 3 produtos na base. OK
+
+    A segunda opção deve atualizar o primeiro produto cadastrado na opção 1.OK
+
+    A terceira opção deve excluir o segundo produto cadastrado. OK
+
+    Obs.: Tudo deve ser feito de forma automática apenas selecionando as opções ao
+    selecionar uma ação, deve ser mantida as opções apenas sinalizando no console que
+    ação foi realizada. Para finalizar a aplicação deve ser selecionado a opção 0.
+*/
+
     public static void main(String[] args) {
-        System.out.println("\n=========================== Bem-vindo a questão 1 da Sprint2 ============================\n");
+
         layout();
 
         try (Scanner input = new Scanner(System.in)) {
@@ -22,7 +45,7 @@ public class Main {
 
                 switch (opcao) {
                     case 1 -> adicionandoProdutos();
-//                    case 2 ->
+                    case 2 -> atualizandoPrimeiroProduto();
                     case 3 -> excluindoSegundoProduto();
                 }
             }
@@ -43,23 +66,40 @@ public class Main {
 
         jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
 
+        //Verificando se existe um produto no banco, caso não exista será criado novos produtos
+        if (produtoDAO.buscarProduto(3)) {
+            throw new RuntimeException();
+        }
         produtoDAO.adicionarProdutos(produto1);
         produtoDAO.adicionarProdutos(produto2);
         produtoDAO.adicionarProdutos(produto3);
-
         System.out.println("\nProdutos cadastrados com sucesso!\n");
 
-}
+    }
+
+    private static void atualizandoPrimeiroProduto() {
+        jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
+
+        // não existir id 1 lançará uma excpetion
+        if (!produtoDAO.buscarProduto(1)) {
+            throw new RuntimeException();
+        }
+        produtoDAO.atualizandoProduto();
+    }
 
     private static void excluindoSegundoProduto() {
 
         jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
-        produtoDAO.excluindoProduto();
 
-        System.out.println("\nProduto excluído com sucesso!\n");
+        // não existir id 2 lançará uma excpetion
+        if (!produtoDAO.buscarProduto(2)) {
+            throw new RuntimeException();
+        }
+        produtoDAO.excluindoProduto();
     }
 
     private static void layout() {
+        System.out.println("\n=========================== Bem-vindo a questão 1 da Sprint2 ============================\n");
         System.out.println("Selecione uma das opções abaixo :                                  ");
         System.out.println("           1. Cadastrar Produtos");
         System.out.println("           2. Atualizar Produto");
