@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Produto {
 
-    private int id;
+//    private int id;
     private String nome;
     private String descricao;
     private int quantidade;
@@ -16,6 +16,10 @@ public class Produto {
         this.quantidade = quantidade;
         this.preco = preco;
     }
+
+//    public Produto() {
+//    }
+
     public String getNome() {
         return nome;
     }
