@@ -1,6 +1,6 @@
 package questao1;
 
-import questao1.dao.ProdutoDAO;
+import questao1.dao.jdbcProdutoDAO;
 import questao1.model.Produto;
 
 import java.math.BigDecimal;
@@ -8,29 +8,31 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("\n=========================== Bem-vindo a questão 1 da Sprint2 ============================\n");
+        layout();
 
-        int opcao = 20;
+        try (Scanner input = new Scanner(System.in)) {
 
-        while(opcao != 0){
+            int opcao = 20;
 
-            layout();
-
-            try (Scanner input = new Scanner(System.in)) {
+            while (opcao > 0) {
+                System.out.print("Opcão:");
                 opcao = input.nextInt();
-            } catch (Exception e) {
-                throw new RuntimeException("Informe um valor válido");
-            }
 
-            switch (opcao) {
-                case 1 -> adicionandoProdutos();
+                switch (opcao) {
+                    case 1 -> adicionandoProdutos();
+//                    case 2 ->
+                    case 3 -> excluindoSegundoProduto();
+                }
             }
+        } catch (Exception e) {
+            throw new RuntimeException("Entrada inválida!");
         }
     }
 
     private static void adicionandoProdutos() {
-        Produto produto1 = new Produto("Mouse Pad", "Mouse Pad com Logo da Compass",
+        Produto produto1 = new Produto("Mouse", "Mouse da Compass",
                 10, new BigDecimal("120"));
 
         Produto produto2 = new Produto("Tag Springuiçados", "Figurinha do melhor time de estágio da Compass",
@@ -39,12 +41,22 @@ public class Main {
         Produto produto3 = new Produto("Caneca Java", "Caneca Java, 325 ml",
                 8, new BigDecimal("32.99"));
 
-        ProdutoDAO produtoDAO = new ProdutoDAO();
+        jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
+
         produtoDAO.adicionarProdutos(produto1);
         produtoDAO.adicionarProdutos(produto2);
         produtoDAO.adicionarProdutos(produto3);
 
-        System.out.println("\nProdutos cadastrados com sucesso!");
+        System.out.println("\nProdutos cadastrados com sucesso!\n");
+
+}
+
+    private static void excluindoSegundoProduto() {
+
+        jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
+        produtoDAO.excluindoProduto();
+
+        System.out.println("\nProduto excluído com sucesso!\n");
     }
 
     private static void layout() {
@@ -55,6 +67,5 @@ public class Main {
         System.out.println("           0. Sair");
         System.out.println(" ");
         System.out.println("==================================================================================");
-        System.out.print("Opcão:");
     }
 }
