@@ -1,7 +1,7 @@
-package questao1.dao;
+package questao1.dao.jdbc;
 
-import questao1.jdbc.conexao.Conexao;
-import questao1.jdbc.conexao.ProdutoDAO;
+import questao1.dao.jdbc.Conexao;
+import questao1.dao.jdbc.ProdutoDAO;
 import questao1.model.Produto;
 
 import java.sql.Connection;
