@@ -13,6 +13,7 @@ public class JdbcFilmeDAO implements FilmeDAO {
 
     @Override
     public void adicionarFilmes(List<Filme> filmes) {
+        //Inserindo uma lista de filmes
         String sql = "INSERT INTO filme(nome, descricao, ano) VALUES (?, ?, ?)";
 
         Conexao conexao = new Conexao();
@@ -33,7 +34,10 @@ public class JdbcFilmeDAO implements FilmeDAO {
 
     @Override
     public List<Filme> listarFilmes(int quantidade, int pagina) {
-
+        /*
+        * fazendo SELECT na tablela filme, utilizando o LIMIT aparecer apenas a quantidade que o usuário deseja
+        *  e o OFFSET para representar a página selecionada
+        * */
         String sql = "SELECT * FROM filme LIMIT " + quantidade + " OFFSET " + pagina;
 
         List<Filme> filmes = new ArrayList<>();
@@ -61,7 +65,7 @@ public class JdbcFilmeDAO implements FilmeDAO {
 
     @Override
     public void excluirFilmes() {
-
+        //apagando todos os dados da tabela filme
         String sql = "TRUNCATE TABLE filme";
         Conexao conexao = new Conexao();
         try (Connection ignored = conexao.getConnection();
