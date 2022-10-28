@@ -57,4 +57,27 @@ RESPOSTA: Programa com funcionamento bem simples, terá um layout com 4 opcoes, 
 
 ![Captura de Tela (45)](https://user-images.githubusercontent.com/81782608/198436354-b801e869-da6f-4f45-85ec-795085b3de0e.png)
 
+<br><br><br><br><br>
 
+2 - Crie uma entidade filme, com os seguintes atributos:
+• id
+• nome
+• descrição
+• ano
+Cadastre 20 filmes e simule a lógica de uma paginação. Use a classe Scanner para
+perguntar ao usuário o número de quantos filmes ele deseja filtrar e em qual página
+ele quer acessar. Por exemplo: Desejo ver 5 filmes da página 2 ou Desejo ver 10
+filmes da página 1.
+
+RESPOSTA: A entrada válida são números inteiros, representando a quantidades de filmes que você deseja ver e qual página, assim que iniciar a aplicação, ela fará um TRUNCATE na tabela filme através de um método, e logo após isso um insert dos 20 filmes.
+
+
+<h2>Iniciando a aplicação</h2>
+
+<h3>Imagem do código</h3>
+
+![Captura de Tela (47)](https://user-images.githubusercontent.com/81782608/198492917-cc0a743a-2e4f-428a-b4ae-3b9494fa71de.png)
+
+<h3>Imagem do BD</h3>
+
+![Captura de Tela (48)](https://user-images.githubusercontent.com/81782608/198493444-7e65e9b3-bd36-458c-95e3-26f6b0e4b527.png)
