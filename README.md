@@ -23,3 +23,38 @@ ação foi realizada. Para finalizar a aplicação deve ser selecionado a opçã
 RESPOSTA: Programa com funcionamento bem simples, terá um layout com 4 opcoes, 1. Cadastro de Produtos, 2. Atualiza o primeiro produto, 3. Exclui o  segundo produto e 0. Finaliza o programa. Caso não exista Produto para ser atualizado ou excluido, será lançado uma exception.
 
 
+<h2>Entrando com a opção 1 (cadastrando produtos)</h2>
+
+<h3>Imagem do código</h3>
+
+![Captura de Tela (33)](https://user-images.githubusercontent.com/81782608/198433992-c642d845-8806-4cdf-9600-6fa84b899a20.png)
+
+
+<h3>Imagem do BD</h3>
+
+![Captura de Tela (40)](https://user-images.githubusercontent.com/81782608/198434365-51762061-c341-42d6-8580-5392a6e594b8.png)
+
+
+
+<h2>Entrando com a opção 2 (atualizando o primeiro produto)</h2>
+
+<h3>Imagem do código</h3>
+
+![Captura de Tela (41)](https://user-images.githubusercontent.com/81782608/198435710-69fd9278-8524-407b-85c7-7116f77c7c2b.png)
+
+<h3>Imagem do BD</h3>
+
+![Captura de Tela (42)](https://user-images.githubusercontent.com/81782608/198435766-e44e214a-5cda-4f29-a20d-83a7b60c9e33.png)
+
+
+<h2>Entrando com a opção 3 (excluindo o segundo produto)</h2>
+
+<h3>Imagem do código</h3>
+
+![Captura de Tela (43)](https://user-images.githubusercontent.com/81782608/198436278-35922d88-c23f-4d25-9c44-3a77dd114b7c.png)
+
+<h3>Imagem do BD</h3>
+
+![Captura de Tela (45)](https://user-images.githubusercontent.com/81782608/198436354-b801e869-da6f-4f45-85ec-795085b3de0e.png)
+
+
