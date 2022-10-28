@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 //Calsse criada para as regras de negocio
-public class jdbcProdutoDAO implements ProdutoDAO {
+public class JdbcProdutoDAO implements ProdutoDAO {
 
     public void adicionarProdutos(Produto produto) {
         String sql = "INSERT INTO produto(nome, descricao, quantidade, preco) VALUES (?, ?, ?, ?)";

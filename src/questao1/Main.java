@@ -1,6 +1,6 @@
 package questao1;
 
-import questao1.dao.jdbc.jdbcProdutoDAO;
+import questao1.dao.jdbc.JdbcProdutoDAO;
 import questao1.model.Produto;
 
 import java.math.BigDecimal;
@@ -64,7 +64,7 @@ public class Main {
         Produto produto3 = new Produto("Caneca Java", "Caneca Java, 325 ml",
                 8, new BigDecimal("32.99"));
 
-        jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
+        JdbcProdutoDAO produtoDAO = new JdbcProdutoDAO();
 
         //Verificando se existe um produto no banco, caso não exista será criado novos produtos
         if (produtoDAO.buscarProduto(3)) {
@@ -78,7 +78,7 @@ public class Main {
     }
 
     private static void atualizandoPrimeiroProduto() {
-        jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
+        JdbcProdutoDAO produtoDAO = new JdbcProdutoDAO();
 
         // não existir id 1 lançará uma excpetion
         if (!produtoDAO.buscarProduto(1)) {
@@ -89,7 +89,7 @@ public class Main {
 
     private static void excluindoSegundoProduto() {
 
-        jdbcProdutoDAO produtoDAO = new jdbcProdutoDAO();
+        JdbcProdutoDAO produtoDAO = new JdbcProdutoDAO();
 
         // não existir id 2 lançará uma excpetion
         if (!produtoDAO.buscarProduto(2)) {
