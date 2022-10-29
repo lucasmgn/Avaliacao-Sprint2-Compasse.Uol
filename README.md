@@ -81,3 +81,47 @@ RESPOSTA: A entrada válida são números inteiros, representando a quantidades 
 <h3>Imagem do BD</h3>
 
 ![Captura de Tela (48)](https://user-images.githubusercontent.com/81782608/198493444-7e65e9b3-bd36-458c-95e3-26f6b0e4b527.png)
+
+<br><br><br><br><br>
+
+3 - (OBI-2020) Emoticons são símbolos usados para expressar o sentimento de quem
+escreve uma mensagem. Scott Fahlman, um professor de uma universidade
+americana, foi o primeiro a propor o uso das sequências de caracteres :-) e :-(, que viraram respectivamente símbolos para “divertido” e “chateado”. Vamos definir o
+sentimento expresso em uma mensagem como sendo:
+
+a) neutro: se o número de símbolos “divertido” é igual ao número de símbolos
+“chateado”
+
+b) divertido: se o número de símbolos “divertido” é maior do que número de
+símbolos “chateado”
+
+c) chateado: se o número de símbolos “chateado” é maior do que número de
+símbolos “divertido”.
+
+Dada uma mensagem composta por uma cadeia de caracteres, escreva um programa
+para determinar o sentimento expresso na mensagem. O seu programa deve usar a
+classe Scanner para ler uma linha de entrada e a partir dessa linha devolver o
+sentimento expresso. (Atenção: Validações de entrada é um ponto para prestar
+bastante atenção).
+
+Exemplo:
+
+Entrada: Espero que esteja tudo bem:-)
+Saída: divertido
+
+Entrada: Achei o filme muito divertido.
+Saída: neutro
+
+Entrada: :-):-(:-(:-)
+Saída: neutro
+
+Entrada: Sonhei com a prova :-( (vou estudar).
+Saída: chateado
+
+RESPOSTA: A aplicação pede para o usuário escrever o seu bem estar, a partir daí ela transformará a sua entrada em um array de caracteres, validando de 3 em 3 e verificando se contém :-) ou :-(, após isso ela fará a lógica, se tiver mais :-), então o resultado será divertido, se tiver mais :-(, o retorno será chateado, caso tenha a mesma quantidade retornará neutro, se não tiver nenhum emoticons retornará neutro. 
+
+<h3>Imagem do código</h3>
+
+![Captura de Tela (50)](https://user-images.githubusercontent.com/81782608/198837443-16398fdd-b9b2-4149-80d5-ce782b4abfb7.png)
+
+
