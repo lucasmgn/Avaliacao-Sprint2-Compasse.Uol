@@ -36,64 +36,18 @@ package questao3;
 
 * */
 
-import java.util.Scanner;
+import questao3.service.OperacaoService;
+import questao3.service.ValidaEntradaService;
 
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("\n=========================== Bem-vindo Usuário a questão 3 da Sprint2 ============================\n");
-        System.out.print("Como você está? ");
 
-        try (Scanner input = new Scanner(System.in)) {
-            String entradaDoUsuario = input.nextLine();
+        ValidaEntradaService entrada = new ValidaEntradaService();
+        OperacaoService.operacao(entrada);
 
-            validarEntrada(entradaDoUsuario);
-
-        } catch (Exception e) {
-            throw new RuntimeException("Entrada inválida!");
-        }
         System.out.println("\n=================================================================================================");
-    }
-
-    private static void validarEntrada(String entrada) throws Exception {
-        verificarEntrada(entrada);
-
-        String entradaFormatada = entrada.replaceAll("\\s+", "");
-
-        char[] arraysEntrada = entradaFormatada.toCharArray();
-
-        int tamanhoDaEntrada = arraysEntrada.length;
-        int valida = 3;
-        int felicidade = 0;
-        int tristeza = 0;
-
-        for (int i = 0; i < tamanhoDaEntrada; i++) {
-
-            String substring = entradaFormatada.substring(i, valida);
-
-            if (substring.contains(":-)")) {
-                felicidade++;
-            } else if (substring.contains(":-(")) {
-                tristeza++;
-            }
-            if(valida < tamanhoDaEntrada){
-                valida++;
-            }
-        }
-
-        if (felicidade > tristeza) {
-            System.out.println("Saída: Divertido");
-        } else if (felicidade < tristeza) {
-            System.out.println("Saída: Chateado");
-        } else {
-            System.out.println("Saída: Neutro");
-        }
-    }
-
-    private static void verificarEntrada(String entrada) throws Exception {
-        if (entrada.isEmpty()) {
-            throw new Exception("Entrada inválida");
-        }
     }
 }
