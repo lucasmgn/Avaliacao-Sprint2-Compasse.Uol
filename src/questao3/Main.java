@@ -36,18 +36,12 @@ package questao3;
 
 * */
 
-import questao3.service.OperacaoService;
-import questao3.service.ValidaEntradaService;
+import questao3.view.Visualizacao;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        System.out.println("\n=========================== Bem-vindo Usuário a questão 3 da Sprint2 ============================\n");
-
-        ValidaEntradaService entrada = new ValidaEntradaService();
-        OperacaoService.operacao(entrada);
-
-        System.out.println("\n=================================================================================================");
+        Visualizacao visualizacao = new Visualizacao();
+        visualizacao.chamada();
     }
 }
